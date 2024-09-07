@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'customers',
     'oauth2_provider',
     'rest_framework',
 ]
@@ -101,7 +102,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-
+AWS_S3_BUCKET_NAME = 'your_bucket_name'
+AWS_S3_REGION_NAME = 'your_region'
+AWS_ACCESS_KEY_ID = 'your_access_key_id'
+AWS_SECRET_ACCESS_KEY = 'your_secret_access_key'
 STATIC_URL = 'static/'
 
 
