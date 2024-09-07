@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'customers',
     'oauth2_provider',
     'rest_framework',
 ]
@@ -67,12 +68,12 @@ if env_vars.get('DATABASE_URL', False):
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+        # 'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
-
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -91,6 +92,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/admin/login/'
+LOGIN_REDIRECT_URL = '/api/customers'
 
 LANGUAGE_CODE = 'en-us'
 
@@ -101,7 +103,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-
+AWS_S3_BUCKET_NAME = 'your_bucket_name'
+AWS_S3_REGION_NAME = 'your_region'
+AWS_ACCESS_KEY_ID = 'your_access_key_id'
+AWS_SECRET_ACCESS_KEY = 'your_secret_access_key'
 STATIC_URL = 'static/'
 
 
