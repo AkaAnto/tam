@@ -55,12 +55,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TAM.wsgi.application'
 
+# Local, no docker
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# Local, using docker
+if env_vars.get('USE_DOCKER', False) == 'True':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': env_vars.get('POSTGRES_DB', 'postgres'),
+            'USER': env_vars.get('POSTGRES_USER', 'postgres'),
+            'PASSWORD': env_vars.get('POSTGRES_PASSWORD', 'postgres'),
+            'HOST': env_vars.get('POSTGRES_HOST', 'localhost'),
+            'PORT': env_vars.get('POSTGRES_PORT', '5432'),
+        }
+    }
+# Prod
 if env_vars.get('DATABASE_URL', False):
     DATABASES = {
         'default': dj_database_url.parse(env_vars.get('DATABASE_URL'))
