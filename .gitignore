@@ -131,3 +131,4 @@ cython_debug/
 .idea/
 uploads/
 generate_code.py
+data/
