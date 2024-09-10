@@ -132,3 +132,4 @@ cython_debug/
 uploads/
 generate_code.py
 data/
+staticfiles/

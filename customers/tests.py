@@ -39,7 +39,6 @@ class APITests(TestCase):
         self.assertEqual(response.status_code, 401)
 
     def test_user_endpoint_admin(self):
-        print(str(self.admin_token))
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + str(self.admin_token))
         response = self.client.get('/api/users/')
         self.assertEqual(response.status_code, 200)
