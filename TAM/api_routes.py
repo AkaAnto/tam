@@ -5,5 +5,5 @@ from customers.views import CostumerViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'customers', CostumerViewSet)
+router.register(r'users', UserViewSet, 'users')
+router.register(r'customers', CostumerViewSet, 'customers')

@@ -18,6 +18,9 @@ Agile Monkeys Technical test
     - Access django container and run migrations: python3 manage.py migrate
     - Access the API: On your browser visit http://127.0.0.1:8000/api/
 
+### Run the tests
+    - from you local or docker instance run: python3 manage.py test
+
 ## Rationale for using Django:
 
     - Provides basic security measures  out the box: Authentication, Authorisation, SQL injection and XSS prevention ...
