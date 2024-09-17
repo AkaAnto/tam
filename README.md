@@ -1,4 +1,4 @@
-# tam
+# TAM
 Agile Monkeys Technical test
 
 ## Getting started
@@ -7,9 +7,9 @@ Agile Monkeys Technical test
     - Install dependencies: pip install -r requirements.txt
     - Add .env file for environment variables
     - Run migrations to create/update database: python3 manage.py migrate
-    -  Create an admin user: python3 manage.py createsuperuser
-    -  Run the server: python3 manage.py runserver
-    -  Access the API: On your browser visit http://127.0.0.1:8000/api/
+    - Create an admin user: python3 manage.py createsuperuser
+    - Run the server: python3 manage.py runserver
+    - Access the API: On your browser visit http://127.0.0.1:8000/api/
 
 ### Local development DOCKER
     - Add .env file for environment variables
@@ -19,7 +19,7 @@ Agile Monkeys Technical test
     - Access the API: On your browser visit http://127.0.0.1:8000/api/
 
 ### Run the tests
-    - from you local or docker instance run: python3 manage.py test
+    - From you local or docker instance run: python3 manage.py test
 
 ## Rationale for using Django:
 
